@@ -58,24 +58,26 @@ class segment_pulse(segment_base):
                         'Use add_ramp_ss.')
 
     @loop_controller
-    def add_ramp_ss(self, start, stop, start_amplitude, stop_amplitude, keep_amplitude=False):
+    def add_ramp_ss(self, start : float, stop : float, start_amplitude, stop_amplitude, keep_amplitude=False):
         '''
         Makes a linear ramp (with start and stop amplitude)
         Args:
-            start (double) : starting time of the ramp
-            stop (double) : stop time of the ramp
-            amplitude : total hight of the ramp, starting from the base point
+            start: starting time of the ramp
+            stop: stop time of the ramp
+            start_amplitude : amplitude at the starting point
+            stop_amplitude : amplitude at the stopping point
             keep_amplitude : when pulse is done, keep reached amplitude for time infinity
         '''
         return self._add_ramp(start, stop, start_amplitude, stop_amplitude, keep_amplitude)
 
-    def _add_ramp(self, start, stop, start_amplitude, stop_amplitude, keep_amplitude=False):
+    def _add_ramp(self, start : float, stop : float, start_amplitude, stop_amplitude, keep_amplitude=False):
         '''
         Makes a linear ramp (with start and stop amplitude)
         Args:
-            start (double) : starting time of the ramp
-            stop (double) : stop time of the ramp
-            amplitude : total hight of the ramp, starting from the base point
+            start: starting time of the ramp
+            stop: stop time of the ramp
+            start_amplitude : amplitude at the starting point
+            stop_amplitude : amplitude at the stopping point
             keep_amplitude : when pulse is done, keep reached amplitude for time infinity
         '''
         if start != stop:
